@@ -1,1 +1,1 @@
-# optical-character-recognition
+# traffic-sign-classification
