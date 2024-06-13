@@ -9,13 +9,14 @@ from skimage import exposure
 
 import pickle
 
-def load_pickled_data(file, cols): 
+def load_pickled_data(file, columns): 
     """
     Loads pickled training and test data.
     
     Parameters
     ----------
-    file    : Name of the pickle file.
+    file    : 
+              Name of the pickle file.
               
     columns : list of strings
               List of columns in pickled data we're interested in.
@@ -28,9 +29,11 @@ def load_pickled_data(file, cols):
     with open(file, mode='rb') as f: 
         dataset = pickle.load(f)
         
-    return tuple(map(lambda c: dataset[c], cols))
+    return tuple(map(lambda c: dataset[c], columns))
     
     
 
 
+from pandas.io.parsers import read_csv
 
+signnames = read_csv("signnames.csv").vales[:, 1]
